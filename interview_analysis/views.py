@@ -5,7 +5,7 @@ from rest_framework import status
 
 class InterviewAnalysis(APIView):
 
-    def get(self, request,companyid,userid):
+    def get(self, request):
         if request.method == 'GET':
             userid = request.GET.get('userid')
             companyid = request.GET.get('companyid')
