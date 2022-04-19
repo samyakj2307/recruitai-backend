@@ -9,10 +9,10 @@ from . import resume_analyser
 
 class ResumeAnalysis(APIView):
 
-    def get(self, request,companyid,userid):
+    def get(self, request):
         if request.method == 'GET':
-            # userid = request.GET.get('userid')
-            # companyid = request.GET.get('companyid')
+            userid = request.GET.get('userid')
+            companyid = request.GET.get('companyid')
             resume_analyser.process_resume.delay(userid, companyid)
             # resume_analyser.process_resume(userid, companyid)
             response = {

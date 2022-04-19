@@ -7,8 +7,8 @@ class InterviewAnalysis(APIView):
 
     def get(self, request,companyid,userid):
         if request.method == 'GET':
-            # userid = request.GET.get('userid')
-            # companyid = request.GET.get('companyid')
+            userid = request.GET.get('userid')
+            companyid = request.GET.get('companyid')
             interview_analyser.process_video.delay(userid,companyid)
             # interview_analyser.process_video(userid,companyid)
             
